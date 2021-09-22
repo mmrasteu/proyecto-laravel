@@ -16,7 +16,7 @@ remember_token  varchar(255),
 CONSTRAINT pk_users PRIMARY KEY(id)
 )ENGINE=InnoDb;
 /*
-INSERT INTO users VALUES(NULL, 'user', 'VÃ­ctor', 'Robles', 'victorroblesweb', 'victor@victor.com', 'pass', null, CURTIME(), CURTIME(), NULL);
+INSERT INTO users VALUES(NULL, 'user', 'Mikel', 'Over', 'mikaelover', 'mmrasteu@over.com', 'pass', null, CURTIME(), CURTIME(), NULL);
 INSERT INTO users VALUES(NULL, 'user', 'Juan', 'Lopez', 'juanlopez', 'juan@juan.com', 'pass', null, CURTIME(), CURTIME(), NULL);
 INSERT INTO users VALUES(NULL, 'user', 'Manolo', 'Garcia', 'manologarcia', 'manolo@manolo.com', 'pass', null, CURTIME(), CURTIME(), NULL);
 */
@@ -31,10 +31,10 @@ CONSTRAINT pk_images PRIMARY KEY(id),
 CONSTRAINT fk_images_users FOREIGN KEY(user_id) REFERENCES users(id)
 )ENGINE=InnoDb;
 /*
-INSERT INTO images VALUES(NULL, 1, 'test.jpg', 'descripciÃ³n de prueba 1', CURTIME(), CURTIME());
-INSERT INTO images VALUES(NULL, 1, 'playa.jpg', 'descripciÃ³n de prueba 2', CURTIME(), CURTIME());
-INSERT INTO images VALUES(NULL, 1, 'arena.jpg', 'descripciÃ³n de prueba 3', CURTIME(), CURTIME());
-INSERT INTO images VALUES(NULL, 3, 'familia.jpg', 'descripciÃ³n de prueba 4', CURTIME(), CURTIME());
+INSERT INTO images VALUES(NULL, 1, 'test.jpg', 'descripcion de prueba 1', CURTIME(), CURTIME());
+INSERT INTO images VALUES(NULL, 1, 'playa.jpg', 'descripcion de prueba 2', CURTIME(), CURTIME());
+INSERT INTO images VALUES(NULL, 1, 'arena.jpg', 'descripcion de prueba 3', CURTIME(), CURTIME());
+INSERT INTO images VALUES(NULL, 3, 'familia.jpg', 'descripcion de prueba 4', CURTIME(), CURTIME());
 */
 
 CREATE TABLE IF NOT EXISTS comments(
