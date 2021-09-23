@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-use App\Models\Image;
+//use App\Models\Image;
 
 Route::get('/', function () {
-    
+    /*
     $images = Image::all();
     foreach($images as $image){
         echo $image->image_path."<br/>";
@@ -38,6 +38,12 @@ Route::get('/', function () {
     }
     
     die();
+    */
+    
     
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
