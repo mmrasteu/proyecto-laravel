@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -59,6 +60,9 @@
                             <li class="nav-item">
                                     <a class="nav-link" href=" ">{{ __('Subir foto') }}</a>
                             </li>
+                            <li>
+                                @include('includes.avatar')
+                            </li>
                             
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -70,7 +74,7 @@
                                         {{ __('Mi Perfil') }}
                                     </a>
                                     
-                                    <a class="dropdown-item" href=" ">
+                                    <a class="dropdown-item" href="{{ route('config') }}">
                                         {{ __('Configuración') }}
                                     </a>
                                     
