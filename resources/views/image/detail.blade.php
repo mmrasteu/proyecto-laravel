@@ -27,6 +27,9 @@
                         
                         <div class="description">
                             <span class="nickname">{{ '@'.$image->user->nick }}</span>
+                            <span class="nickname date">
+                                {{ ' | '.$image->created_at->locale('es_ES')->diffForHumans(null, false, false, 1) }}
+                            </span>
                             <p>{{ $image->description }}</p>
                         </div>
                         
@@ -39,15 +42,40 @@
                             <h2>Comentarios ({{ count($image->comments) }}) </h2>
                             <hr>
                             
-                            <form method="POST" action="" >
+                            <form method="POST" action="{{ route('comment.save') }}" >
                                 @csrf
                                 
                                 <input type="hidden" name="image_id" value="{{$image->id}}" />
-                                <p><textarea class="form-control" name="content" required></textarea></p>
+                                <p><textarea class="form-control @error('content') is-invalid @enderror" name="content" required></textarea></p>
+                                @error('content')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                
+                                
                                 <button type="submit" class="btn btn-success">
                                     Enviar
                                 </button>
                             </form>     
+                            
+                            <hr>
+                            
+                            @foreach($image->comments as $comment)
+                            <div class="comment">
+                                <span class="nickname">{{ '@'.$comment->user->nick }}</span>
+                                <span class="nickname date">
+                                    {{ ' | '.$comment->created_at->locale('es_ES')->diffForHumans(null, false, false, 1) }}
+                                </span>
+                                <p>{{ $comment->content }}<br>
+                                @if(Auth::check() && ($comment->user_id == Auth::user()->id || $comment->image->user_id == Auth::user()->id))
+                                    <a href="{{ route('comment.delete', ['id' => $comment->id]) }}" class="btn btn-sm btn-danger">
+                                        Eliminar
+                                    </a>
+                                @endif
+                                </p>
+                            </div>
+                            @endforeach
                             
                         </div>
                     </div>
