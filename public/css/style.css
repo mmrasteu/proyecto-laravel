@@ -94,3 +94,8 @@ form .avatar{
     padding: 20px;
     
 }
+
+.number_likes{
+    color:grey;
+    font-size: 11px;
+}
