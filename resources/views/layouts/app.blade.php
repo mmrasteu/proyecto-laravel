@@ -54,11 +54,11 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                    <a class="nav-link" href=" ">{{ __('Inicio') }}</a>
+                                    <a class="nav-link" href="{{ route('home') }}">{{ __('Inicio') }}</a>
                             </li>
                             
                             <li class="nav-item">
-                                    <a class="nav-link" href=" ">{{ __('Subir foto') }}</a>
+                                    <a class="nav-link" href="{{ route('image.create') }}">{{ __('Subir foto') }}</a>
                             </li>
                             <li>
                                 @include('includes.avatar')
