@@ -59,6 +59,10 @@
                             </li>
                             
                             <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('user.index') }}">{{ __('Gente') }}</a>
+                            </li>
+                            
+                            <li class="nav-item">
                                     <a class="nav-link" href="{{ route('image.create') }}">{{ __('Subir foto') }}</a>
                             </li>
                             <li>
@@ -71,8 +75,12 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href=" ">
+                                    <a class="dropdown-item" href="{{ route('profile', ['id' => Auth::user()->id ]) }}">
                                         {{ __('Mi Perfil') }}
+                                    </a>
+                                    
+                                    <a class="dropdown-item" href=" {{route('likes')}}">
+                                        {{ __('Publicaciones favoritas') }}
                                     </a>
                                     
                                     <a class="dropdown-item" href="{{ route('config') }}">

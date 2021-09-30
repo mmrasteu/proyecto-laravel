@@ -45,7 +45,9 @@ form .avatar{
 .pub_image .data-user a{
     color: #444;
 }
-
+.data-user{
+    color: #444;
+}
 
 .pub_image .nickname{
     color:gray;
@@ -98,4 +100,32 @@ form .avatar{
 .number_likes{
     color:grey;
     font-size: 11px;
+}
+
+.profile-user{
+    height: 200px;
+    margin-bottom: 40px;
+}
+
+.profile-user .container-avatar{
+    width: 200px;
+    height: 200px;
+    border-radius: 900px;
+    overflow: hidden;
+    float: left;
+}
+
+.profile-user .container-avatar img{
+    height: 100%;
+}
+
+.profile-user .user-info{
+    float: left;
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+.btn-search{
+    margin-left: 0px;
+    padding-left: 0px;
 }
